@@ -12,17 +12,15 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     timeout-minutes: 30
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Java 17
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -38,9 +36,8 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug --stacktrace
 
-      - name: Upload Debug APK
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: PsyForms-Debug
           path: app/build/outputs/apk/debug/*.apk
-          if-no-files-found: error
