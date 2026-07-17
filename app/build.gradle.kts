@@ -9,7 +9,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "vtsen.hashnode.dev.newemptycomposeapp"
+        applicationId = "ir.psyforms.app"
         minSdk = 23
         targetSdk = 36
         versionCode = 1
