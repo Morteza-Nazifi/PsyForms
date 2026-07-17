@@ -1,7 +1,6 @@
 [versions]
 androidGradlePlugin = "8.13.2"
 kotlin = "2.3.0"
-ksp = "2.3.0-2.0.2"
 spotless = "8.1.0"
 
 androidxComposeCompiler = "1.5.1"
@@ -15,8 +14,6 @@ accompanistSystemUiController = "0.36.0"
 
 androidxSplashScreen = "1.2.0"
 
-room = "2.7.2"
-
 buildUtils = "0.0.13"
 
 [plugins]
@@ -24,7 +21,6 @@ android-application = { id = "com.android.application", version.ref = "androidGr
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 diffplug-spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 
 [libraries]
@@ -45,13 +41,17 @@ accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-
 
 androidx-splash-screen = { module = "androidx.core:core-splashscreen", version.ref = "androidxSplashScreen" }
 
-androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
-androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
-androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
-androidx-room-compose = { module = "androidx.room:room-compose", version.ref = "room" }
-
 vinchamp77-buildutils = { module = "com.github.vinchamp77:buildutils", version.ref = "buildUtils" }
 
 [bundles]
-androidx-lifeycle = ["androidx-lifecycle-runtime-compose", "androidx-lifecycle-viewmodel-compose"]
-compose-ui = ["androidx-compose-ui", "androidx-compose-material", "androidx-compose-ui-tooling-preview", "androidx-compose-ui-tooling"]
+androidx-lifeycle = [
+    "androidx-lifecycle-runtime-compose",
+    "androidx-lifecycle-viewmodel-compose"
+]
+
+compose-ui = [
+    "androidx-compose-ui",
+    "androidx-compose-material",
+    "androidx-compose-ui-tooling-preview",
+    "androidx-compose-ui-tooling"
+]
