@@ -17,7 +17,7 @@ androidxSplashScreen = "1.2.0"
 buildUtils = "0.0.13"
 
 room = "2.7.2"
-ksp = "2.3.0-2.0.0"
+ksp = "2.3.9"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
