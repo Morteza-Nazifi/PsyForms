@@ -2,6 +2,7 @@ package ir.psyforms.app.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import ir.psyforms.app.database.dao.DemographicDao
 import ir.psyforms.app.database.dao.DomainDao
 import ir.psyforms.app.database.dao.OptionItemDao
 import ir.psyforms.app.database.dao.OptionTemplateDao
@@ -12,6 +13,7 @@ import ir.psyforms.app.database.dao.SessionDao
 import ir.psyforms.app.database.dao.SubscaleDao
 import ir.psyforms.app.database.entity.AnswerEntity
 import ir.psyforms.app.database.entity.AssessmentSessionEntity
+import ir.psyforms.app.database.entity.DemographicEntity
 import ir.psyforms.app.database.entity.DomainEntity
 import ir.psyforms.app.database.entity.NumericAnswerEntity
 import ir.psyforms.app.database.entity.OptionAnswerEntity
@@ -35,8 +37,11 @@ import ir.psyforms.app.database.entity.TextAnswerEntity
         OptionItemEntity::class,
         ScoringRuleEntity::class,
 
+        // User Data (New Architecture)
         SessionEntity::class,
+        DemographicEntity::class,
 
+        // Temporary legacy entities (to be removed later)
         AssessmentSessionEntity::class,
         QuestionnaireSessionEntity::class,
         AnswerEntity::class,
@@ -64,4 +69,6 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun scoringRuleDao(): ScoringRuleDao
 
     abstract fun sessionDao(): SessionDao
+
+    abstract fun demographicDao(): DemographicDao
 }
