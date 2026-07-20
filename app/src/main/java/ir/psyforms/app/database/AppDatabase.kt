@@ -3,6 +3,7 @@ package ir.psyforms.app.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import ir.psyforms.app.database.dao.DomainDao
+import ir.psyforms.app.database.dao.OptionItemDao
 import ir.psyforms.app.database.dao.OptionTemplateDao
 import ir.psyforms.app.database.dao.QuestionDao
 import ir.psyforms.app.database.dao.QuestionnaireDao
@@ -49,4 +50,6 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun questionDao(): QuestionDao
 
     abstract fun optionTemplateDao(): OptionTemplateDao
+
+    abstract fun optionItemDao(): OptionItemDao
 }
