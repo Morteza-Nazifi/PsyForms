@@ -20,7 +20,13 @@ interface DomainDao {
     @Delete
     suspend fun delete(domain: DomainEntity)
 
-    @Query("SELECT * FROM domains ORDER BY displayOrder")
+    @Query(
+        """
+        SELECT *
+        FROM domains
+        ORDER BY displayOrder
+        """
+    )
     fun getAll(): Flow<List<DomainEntity>>
 
     @Query(
@@ -33,6 +39,12 @@ interface DomainDao {
     )
     fun getActive(): Flow<List<DomainEntity>>
 
-    @Query("SELECT * FROM domains WHERE id = :id")
+    @Query(
+        """
+        SELECT *
+        FROM domains
+        WHERE id = :id
+        """
+    )
     suspend fun getById(id: Long): DomainEntity?
 }
