@@ -14,15 +14,15 @@ class DomainRepository(
     fun getActiveDomains(): Flow<List<DomainEntity>> =
         domainDao.getActive()
 
-    suspend fun getById(id: Long): DomainEntity? =
+    suspend fun getDomainById(id: Long): DomainEntity? =
         domainDao.getById(id)
 
-    suspend fun insert(domain: DomainEntity): Long =
+    suspend fun insertDomain(domain: DomainEntity): Long =
         domainDao.insert(domain)
 
-    suspend fun update(domain: DomainEntity) =
+    suspend fun updateDomain(domain: DomainEntity) =
         domainDao.update(domain)
 
-    suspend fun delete(domain: DomainEntity) =
+    suspend fun deleteDomain(domain: DomainEntity) =
         domainDao.delete(domain)
 }
