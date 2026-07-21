@@ -16,7 +16,8 @@ import androidx.room.PrimaryKey
         )
     ],
     indices = [
-        Index("domainId")
+        Index("domainId"),
+        Index("displayOrder")
     ]
 )
 data class QuestionnaireEntity(
@@ -26,7 +27,7 @@ data class QuestionnaireEntity(
 
     val domainId: Long,
 
-    val title: String,
+    val name: String,
 
     val description: String,
 
@@ -34,5 +35,5 @@ data class QuestionnaireEntity(
 
     val hasTotalScore: Boolean,
 
-    val enabled: Boolean
+    val isActive: Boolean = true
 )
