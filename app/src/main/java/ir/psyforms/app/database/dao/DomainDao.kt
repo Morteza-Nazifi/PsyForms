@@ -23,6 +23,16 @@ interface DomainDao {
     @Query("SELECT * FROM domains ORDER BY displayOrder")
     fun getAll(): Flow<List<DomainEntity>>
 
+    @Query(
+        """
+        SELECT *
+        FROM domains
+        WHERE isActive = 1
+        ORDER BY displayOrder
+        """
+    )
+    fun getActive(): Flow<List<DomainEntity>>
+
     @Query("SELECT * FROM domains WHERE id = :id")
     suspend fun getById(id: Long): DomainEntity?
 }
