@@ -9,7 +9,9 @@ data class DomainEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
 
-    val title: String,
+    val name: String,
 
-    val displayOrder: Int
+    val displayOrder: Int,
+
+    val isActive: Boolean = true
 )
