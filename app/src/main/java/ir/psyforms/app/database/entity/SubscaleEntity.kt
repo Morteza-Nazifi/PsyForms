@@ -16,7 +16,11 @@ import androidx.room.PrimaryKey
         )
     ],
     indices = [
-        Index("questionnaireId")
+        Index("questionnaireId"),
+        Index(
+            value = ["questionnaireId", "displayOrder"],
+            unique = true
+        )
     ]
 )
 data class SubscaleEntity(
@@ -26,7 +30,7 @@ data class SubscaleEntity(
 
     val questionnaireId: Long,
 
-    val title: String,
+    val name: String,
 
     val description: String,
 
