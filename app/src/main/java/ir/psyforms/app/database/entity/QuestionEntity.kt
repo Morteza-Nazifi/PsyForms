@@ -23,7 +23,11 @@ import androidx.room.PrimaryKey
     ],
     indices = [
         Index("subscaleId"),
-        Index("optionTemplateId")
+        Index("optionTemplateId"),
+        Index(
+            value = ["subscaleId", "displayOrder"],
+            unique = true
+        )
     ]
 )
 data class QuestionEntity(
@@ -33,13 +37,11 @@ data class QuestionEntity(
 
     val subscaleId: Long,
 
-    val title: String,
+    val optionTemplateId: Long? = null,
 
     val questionType: Int,
 
-    val displayOrder: Int,
+    val title: String,
 
-    val optionTemplateId: Long?,
-
-    val reverseScoring: Boolean
+    val displayOrder: Int
 )
