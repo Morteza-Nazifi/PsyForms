@@ -3,7 +3,6 @@ package ir.psyforms.app.database.entity
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
-import androidx.room.PrimaryKey
 
 @Entity(
     tableName = "demographics",
@@ -16,12 +15,12 @@ import androidx.room.PrimaryKey
         )
     ],
     indices = [
-        Index(value = ["sessionId"])
+        Index(value = ["sessionId"], unique = true)
     ]
 )
 data class DemographicEntity(
 
-    @PrimaryKey
+    @androidx.room.PrimaryKey
     val sessionId: Long,
 
     val gender: Int,
